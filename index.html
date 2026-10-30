@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Garante que a página seja responsiva em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    
+    <!-- Fonte moderna e minimalista (Inter) importada do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Vinculação do arquivo de estilos externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Container principal: centraliza todo o conteúdo da aplicação -->
+    <main class="app-container">
+        
+        <!-- Cabeçalho com título, subtítulo e botão de alternar tema -->
+        <header class="app-header">
+            <div class="header-topo">
+                <h1 class="app-title">Minhas Tarefas</h1>
+                <!-- Botão didático para alternar entre Modo Claro e Modo Escuro -->
+                <button type="button" id="btn-tema" class="btn-tema" aria-label="Alternar modo escuro" title="Alternar modo escuro">
+                    <span id="icone-tema">🌙</span>
+                </button>
+            </div>
+            <p class="app-subtitle">Organize seu dia de forma simples e eficiente</p>
+        </header>
+
+        <!-- Formulário para adicionar nova tarefa -->
+        <!-- O uso de <form> permite capturar o envio tanto pelo clique quanto pela tecla Enter -->
+        <form id="form-tarefa" class="task-form">
+            <input 
+                type="text" 
+                id="input-tarefa" 
+                class="task-input" 
+                placeholder="O que você precisa fazer hoje?" 
+                autocomplete="off"
+            >
+            <button type="submit" id="btn-adicionar" class="btn-adicionar">
+                Adicionar
+            </button>
+        </form>
+
+        <!-- Mensagem de estado vazio (quando não há tarefas na lista) -->
+        <div id="mensagem-vazia" class="empty-state">
+            <p>Nenhuma tarefa adicionada ainda. Comece digitando acima!</p>
+        </div>
+
+        <!-- Lista onde as tarefas adicionadas serão inseridas dinamicamente pelo JavaScript -->
+        <ul id="lista-tarefas" class="task-list">
+            <!-- Os itens <li> com checkbox e botão de remover serão criados pelo JavaScript -->
+        </ul>
+
+        <!-- Rodapé do aplicativo com contador de tarefas -->
+        <footer class="app-footer">
+            <span id="contador-tarefas">0 tarefas</span>
+        </footer>
+
+    </main>
+
+    <!-- Vinculação do arquivo JavaScript -->
+    <!-- Colocado ao final do body para garantir que os elementos HTML já foram carregados -->
+    <script src="script.js"></script>
+</body>
+</html>
